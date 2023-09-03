@@ -24,16 +24,24 @@ const main = async () => {
 
   let intersectionCount = 0
   measureTimeElapsed(() => {
-    for (const needle of needleElements) {
-      for (const haystackElement of haystackElements) {
-        if (needle === haystackElement) {
-          ++intersectionCount
-        }
-      }
-    }
+    intersectionCount = nestedIterationIntersection(haystackElements, needleElements)
   })
 
   console.info(`Intersection count: ${intersectionCount}.`)
+}
+
+const nestedIterationIntersection = (haystackElements, needleElements) => {
+  let intersectionCount = 0
+
+  for (const needle of needleElements) {
+    for (const haystackElement of haystackElements) {
+      if (needle === haystackElement) {
+        ++intersectionCount
+      }
+    }
+  }
+
+  return intersectionCount
 }
 
 main()
