@@ -1,4 +1,4 @@
-const { load } = require('./lib/load')
+const { load } = require('../load')
 const { measureTimeElapsed } = require('../measure')
 const { printResult } = require('./lib/print_result')
 

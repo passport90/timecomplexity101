@@ -1,3 +1,5 @@
+const printIsCorrect = elements => console.info(`Sorting correct: ${isSortingCorrect(elements)}.`)
+
 const isSortingCorrect = (elements) => {
   let correct = true
   let last
@@ -16,4 +18,4 @@ const isSortingCorrect = (elements) => {
   return correct
 }
 
-module.exports = { isSortingCorrect }
+module.exports = { printIsCorrect }
