@@ -15,16 +15,16 @@ const main = async () => {
     elements.push(parseInt(line))
   }
 
-  let index
+  let foundIdx
   measureTimeElapsed(() => {
-    index = binarySearch(elements)
+    foundIdx = binarySearch(elements)
   })
 
-  printResult(index)
+  printResult(foundIdx)
 }
 
 const binarySearch = elements => {
-  let index
+  let foundIdx
   let left = 0
   let right = elements.length - 1
   while (left <= right) {
@@ -35,12 +35,12 @@ const binarySearch = elements => {
     } else if (needle < midElement) {
       right = mid - 1
     } else {
-      index = mid
+      foundIdx = mid
       break
     }
   }
 
-  return index
+  return foundIdx
 }
 
 main()

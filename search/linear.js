@@ -10,18 +10,29 @@ if (isNaN(needle)) {
 const main = async () => {
   const rl = readline.createInterface({ input: process.stdin, crlfDelay: Infinity })
 
-  const map = []
-  let i = 0
+  const elements = []
   for await (const line of rl) {
-    map[parseInt(line)] = i++
+    elements.push(parseInt(line))
   }
 
   let foundIdx
   measureTimeElapsed(() => {
-    foundIdx = map[needle]
+    foundIdx = linearSearch(elements)
   })
 
   printResult(foundIdx)
+}
+
+const linearSearch = elements => {
+  let foundIdx
+  for (i = 0; i < elements.length; ++i) {
+    if (elements[i] === needle) {
+      foundIdx = i
+      break
+    }
+  }
+
+  return foundIdx
 }
 
 main()
