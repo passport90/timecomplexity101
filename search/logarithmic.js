@@ -1,6 +1,6 @@
-const readline = require('readline')
+const { load } = require('./lib/load')
 const { measureTimeElapsed } = require('../measure')
-const { printResult } = require('./print_result')
+const { printResult } = require('./lib/print_result')
 
 const needle = parseInt(process.argv[2])
 if (isNaN(needle)) {
@@ -8,12 +8,7 @@ if (isNaN(needle)) {
 }
 
 const main = async () => {
-  const rl = readline.createInterface({ input: process.stdin, crlfDelay: Infinity })
-
-  const elements = []
-  for await (const line of rl) {
-    elements.push(parseInt(line))
-  }
+  const elements = await load()
 
   let foundIdx
   measureTimeElapsed(() => {

@@ -1,6 +1,6 @@
 const readline = require('readline')
 const { measureTimeElapsed } = require('../measure')
-const { printResult } = require('./print_result')
+const { printResult } = require('./lib/print_result')
 
 const needle = parseInt(process.argv[2])
 if (isNaN(needle)) {
