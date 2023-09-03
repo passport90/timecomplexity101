@@ -15,7 +15,7 @@ node search/linear.js 123456 < inputs/haystack_1mil.txt
 node search/logarithmic.js 123456 < inputs/haystack_1mil.txt
 node search/constant.js 123456 < inputs/haystack_1mil.txt
 ```
-#### Not Found Cases (Wost-case scenario)
+#### Not Found Cases (Worst-case scenario)
 ```
 node search/linear.js 987654 < inputs/haystack_1mil.txt
 node search/logarithmic.js 987654 < inputs/haystack_1mil.txt
