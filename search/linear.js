@@ -7,22 +7,28 @@ if (isNaN(needle)) {
 const main = async () => {
   const rl = readline.createInterface({ input: process.stdin, crlfDelay: Infinity })
 
-  const map = []
-  let i = 0
+  const elements = []
   for await (const line of rl) {
-    map[parseInt(line)] = i++
+    elements.push(parseInt(line))
   }
 
   const start = process.hrtime.bigint()
 
-  const index = map[needle]
+  let index = undefined
+  for (i = 0; i < elements.length; ++i) {
+    if (elements[i] === needle) {
+      index = i
+      break
+    }
+  }
+
   if (index !== undefined) {
     console.info(`Found at index: ${index}!`)
   } else {
     console.info('Not found!')
   }
 
-  console.info(`Time elapsed: ${(process.hrtime.bigint() - start) / BigInt(1000)} ns.`)
+  console.info(`Time elapsed: ${(process.hrtime.bigint() - start) / BigInt(1000)} ms.`)
 }
 
 main()

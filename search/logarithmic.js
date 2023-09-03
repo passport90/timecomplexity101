@@ -12,7 +12,7 @@ const main = async () => {
     elements.push(parseInt(line))
   }
 
-  const start = Date.now()
+  const start = process.hrtime.bigint()
 
   let index = undefined
   let left = 0
@@ -36,7 +36,7 @@ const main = async () => {
     console.info('Not found!')
   }
 
-  console.info(`Time elapsed: ${Date.now() - start} ms.`)
+  console.info(`Time elapsed: ${(process.hrtime.bigint() - start) / BigInt(1000)} ms.`)
 }
 
 main()
