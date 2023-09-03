@@ -1,4 +1,7 @@
 const readline = require('readline')
+const { measureTimeElapsed } = require('../measure')
+const { printResult } = require('./print_result')
+
 const needle = parseInt(process.argv[2])
 if (isNaN(needle)) {
   throw new Error('Needle is undefined!')
@@ -12,9 +15,16 @@ const main = async () => {
     elements.push(parseInt(line))
   }
 
-  const start = process.hrtime.bigint()
+  let index
+  measureTimeElapsed(() => {
+    index = binarySearch(elements)
+  })
 
-  let index = undefined
+  printResult(index)
+}
+
+const binarySearch = elements => {
+  let index
   let left = 0
   let right = elements.length - 1
   while (left <= right) {
@@ -30,13 +40,7 @@ const main = async () => {
     }
   }
 
-  console.info(`Time elapsed: ${(process.hrtime.bigint() - start) / BigInt(1000)} microseconds.`)
-
-  if (index !== undefined) {
-    console.info(`Found at index: ${index}!`)
-  } else {
-    console.info('Not found!')
-  }
+  return index
 }
 
 main()
