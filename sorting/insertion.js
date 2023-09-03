@@ -14,7 +14,10 @@ const main = async () => {
   let sortedCount = 1
   while (sortedCount < elements.length) {
     let candidateIdx = sortedCount
-    while (candidateIdx > 0 && elements[candidateIdx - 1] > elements[candidateIdx]) {
+    while (
+      candidateIdx > 0
+      && elements[candidateIdx - 1] > elements[candidateIdx]
+    ) {
       let temp = elements[candidateIdx]
       elements[candidateIdx] = elements[candidateIdx - 1]
       elements[candidateIdx - 1] = temp
