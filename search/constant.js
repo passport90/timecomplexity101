@@ -5,7 +5,6 @@ const { getNeedle } = require('./lib/get_needle')
 
 const main = async () => {
   const needle = getNeedle()
-
   const rl = readline.createInterface({ input: process.stdin, crlfDelay: Infinity })
 
   const map = []

@@ -5,7 +5,6 @@ const { printResult } = require('./lib/print_result')
 
 const main = async () => {
   const needle = getNeedle()
-
   const elements = await load()
 
   let foundIdx
