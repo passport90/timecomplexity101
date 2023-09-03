@@ -12,20 +12,26 @@ const main = async () => {
 
 const insertionSort = elements => {
   let sortedCount = 1
+
   while (sortedCount < elements.length) {
     let candidateIdx = sortedCount
+
     while (
       candidateIdx > 0
       && elements[candidateIdx - 1] > elements[candidateIdx]
     ) {
-      let temp = elements[candidateIdx]
-      elements[candidateIdx] = elements[candidateIdx - 1]
-      elements[candidateIdx - 1] = temp
+      swap(elements, candidateIdx - 1, candidateIdx)
 
       --candidateIdx;
     }
     ++sortedCount
   }
+}
+
+const swap = (elements, a, b) => {
+  let temp = elements[a]
+  elements[a] = elements[b]
+  elements[b] = temp
 }
 
 main()
