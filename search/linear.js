@@ -1,5 +1,5 @@
-const { load } = require('../load')
-const { measureTimeElapsed } = require('../measure')
+const { load } = require('../lib/load')
+const { measureTimeElapsed } = require('../lib/measure')
 const { printResult } = require('./lib/print_result')
 
 const needle = parseInt(process.argv[2])

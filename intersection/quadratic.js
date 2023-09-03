@@ -1,5 +1,5 @@
 const readline = require('readline')
-const { measureTimeElapsed } = require('../measure')
+const { measureTimeElapsed } = require('../lib/measure')
 
 const main = async () => {
   const rl = readline.createInterface({ input: process.stdin, crlfDelay: Infinity })
