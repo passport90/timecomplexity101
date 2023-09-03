@@ -22,6 +22,7 @@ const main = async () => {
   let intersectionCount = 0
   measureTimeElapsed(() => {
     // ???
+    throw new Error('Not implemented!')
   })
 
   console.info(`Intersection count: ${intersectionCount}.`)

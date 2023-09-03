@@ -6,7 +6,7 @@ const main = async () => {
   const elements = await load()
 
   measureTimeElapsed(() => {
-    // ??
+    throw new Error('Not implemented!')
   })
 
   printIsCorrect(elements)
