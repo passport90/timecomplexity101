@@ -1,5 +1,5 @@
 const { load } = require('../load')
-const { printIsCorrect } = require('./is_correct')
+const { printIsCorrect } = require('./lib/is_correct')
 const { measureTimeElapsed } = require('../measure')
 
 const main = async () => {
