@@ -15,11 +15,7 @@ for (let i = 0; i < spaceLength; ++i) {
 
 shuffle(spaceElements)
 
-const bucketLength = spaceLength / 2
-const bucketElements = spaceElements.slice(0, bucketLength)
-bucketElements.sort((a, b) => a - b)
-
-for (const bucketElement of bucketElements) {
-  process.stdout.write(bucketElement + '\n')
+for (const spaceElement of spaceElements) {
+  process.stdout.write(spaceElement + '\n')
 }
 

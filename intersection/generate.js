@@ -19,8 +19,8 @@ const bucketLength = spaceLength / 2
 const haystackElements = spaceElements.slice(0, bucketLength)
 haystackElements.sort((a, b) => a - b)
 
-for (let i = 0; i < haystackElements.length; ++i) {
-  process.stdout.write(haystackElements[i] + '\n')
+for (const haystackElement of haystackElements) {
+  process.stdout.write(haystackElement + '\n')
 }
 
 process.stdout.write('-\n')
@@ -30,6 +30,6 @@ shuffle(spaceElements)
 const needleElements = spaceElements.slice(0, bucketLength)
 needleElements.sort((a, b) => a - b)
 
-for (let i = 0; i < needleElements.length; ++i) {
-  process.stdout.write(needleElements[i] + '\n')
+for (const needle of needleElements) {
+  process.stdout.write(needle + '\n')
 }
