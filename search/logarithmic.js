@@ -1,27 +1,25 @@
 const { load } = require('../lib/load')
 const { measureTimeElapsed } = require('../lib/measure')
+const { getNeedle } = require('./lib/get_needle')
 const { printResult } = require('./lib/print_result')
 
-const needle = parseInt(process.argv[2])
-if (isNaN(needle)) {
-  throw new Error('Needle is undefined!')
-}
-
 const main = async () => {
+  const needle = getNeedle()
   const elements = await load()
 
   let foundIdx
   measureTimeElapsed(() => {
-    foundIdx = binarySearch(elements)
+    foundIdx = binarySearch(elements, needle)
   })
 
   printResult(foundIdx)
 }
 
-const binarySearch = elements => {
+const binarySearch = (elements, needle) => {
   let foundIdx
   let left = 0
   let right = elements.length - 1
+
   while (left <= right) {
     let mid = Math.floor((left + right) / 2)
     const midElement = elements[mid]
