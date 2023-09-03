@@ -23,9 +23,9 @@ const main = async () => {
 
   // ???
 
-  console.info(`Intersection count: ${intersectionCount}.`)
-
   console.info(`Time elapsed: ${(process.hrtime.bigint() - start) / BigInt(1000)} microseconds.`)
+
+  console.info(`Intersection count: ${intersectionCount}.`)
 }
 
 main()

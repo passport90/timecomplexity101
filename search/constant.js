@@ -16,13 +16,14 @@ const main = async () => {
   const start = process.hrtime.bigint()
 
   const index = map[needle]
+
+  console.info(`Time elapsed: ${(process.hrtime.bigint() - start) / BigInt(1000)} microseconds.`)
+
   if (index !== undefined) {
     console.info(`Found at index: ${index}!`)
   } else {
     console.info('Not found!')
   }
-
-  console.info(`Time elapsed: ${(process.hrtime.bigint() - start) / BigInt(1000)} microseconds.`)
 }
 
 main()
