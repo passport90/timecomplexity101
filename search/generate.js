@@ -22,3 +22,4 @@ bucketElements.sort((a, b) => a - b)
 for (let i = 0; i < bucketElements.length; ++i) {
   process.stdout.write(bucketElements[i] + '\n')
 }
+
