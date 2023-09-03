@@ -131,3 +131,6 @@ dist
 
 # I/O files
 *.txt
+
+# MacOS
+.DS_Store
