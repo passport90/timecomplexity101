@@ -21,14 +21,16 @@ node search/linear.js 987654 < inputs/haystack_1mil.txt
 node search/logarithmic.js 987654 < inputs/haystack_1mil.txt
 node search/constant.js 987654 < inputs/haystack_1mil.txt
 ```
-## Intersection
+### Intersection
 ```
 node intersection/quadratic.js < inputs/intersection_10000.txt
 node intersection/linear.js < inputs/intersection_10000.txt
 ```
 
-## Sorting
+### Sorting
 ```
 node sorting/insertion.js < inputs/sorting_10000.txt
 node sorting/linearithmic.js < inputs/sorting_10000.txt
 ```
+
+Written by Marhadiasha Kusumawardhana.
