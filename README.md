@@ -33,4 +33,5 @@ node sorting/insertion.js < inputs/sorting_10000.txt
 node sorting/linearithmic.js < inputs/sorting_10000.txt
 ```
 
-Written by Marhadiasha Kusumawardhana.
+## Author
+Written by Marhadiasha Kusumawardhana (marhadiasak@icloud.com).
