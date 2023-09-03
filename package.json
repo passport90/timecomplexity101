@@ -1,0 +1,11 @@
+{
+  "name": "timecomplexity101",
+  "version": "1.0.0",
+  "description": "Time Complexity 101 Workshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marhadiasha Kusumawardhana",
+  "license": "MIT"
+}
