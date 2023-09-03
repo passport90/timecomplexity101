@@ -36,7 +36,7 @@ const main = async () => {
     console.info('Not found!')
   }
 
-  console.info(`Time elapsed: ${(process.hrtime.bigint() - start) / BigInt(1000)} ms.`)
+  console.info(`Time elapsed: ${(process.hrtime.bigint() - start) / BigInt(1000)} microseconds.`)
 }
 
 main()
