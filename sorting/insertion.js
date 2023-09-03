@@ -1,5 +1,6 @@
 const readline = require('readline')
 const { isSortingCorrect } = require('./is_correct')
+const { measureTimeElapsed } = require('../measure')
 
 const main = async () => {
   const rl = readline.createInterface({ input: process.stdin, crlfDelay: Infinity })
@@ -9,8 +10,12 @@ const main = async () => {
     elements.push(parseInt(line))
   }
 
-  const start = process.hrtime.bigint()
+  measureTimeElapsed(() => insertionSort(elements))
 
+  console.info(`Sorting correct: ${isSortingCorrect(elements)}.`)
+}
+
+const insertionSort = elements => {
   let sortedCount = 1
   while (sortedCount < elements.length) {
     let candidateIdx = sortedCount
@@ -26,10 +31,6 @@ const main = async () => {
     }
     ++sortedCount
   }
-
-  console.info(`Time elapsed: ${(process.hrtime.bigint() - start) / BigInt(1000)} microseconds.`)
-
-  console.info(`Sorting correct: ${isSortingCorrect(elements)}.`)
 }
 
 main()

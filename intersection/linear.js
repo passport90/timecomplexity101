@@ -1,4 +1,5 @@
 const readline = require('readline')
+const { measureTimeElapsed } = require('../measure')
 
 const main = async () => {
   const rl = readline.createInterface({ input: process.stdin, crlfDelay: Infinity })
@@ -17,13 +18,11 @@ const main = async () => {
     // ???
   }
 
-  const start = process.hrtime.bigint()
 
   let intersectionCount = 0
-
-  // ???
-
-  console.info(`Time elapsed: ${(process.hrtime.bigint() - start) / BigInt(1000)} microseconds.`)
+  measureTimeElapsed(() => {
+    // ???
+  })
 
   console.info(`Intersection count: ${intersectionCount}.`)
 }
