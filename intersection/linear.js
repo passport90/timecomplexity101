@@ -37,7 +37,7 @@ const nestedIterationIntersection = (haystackElements, needleElements) => {
   let intersectionCount = 0
 
   for (const needle of needleElements) {
-    if (haystackElements.includes(needle)) {
+    if (haystackElements[needle]) {
       intersectionCount++
     }
   }
