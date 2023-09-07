@@ -4,7 +4,7 @@ const { measureTimeElapsed } = require('../lib/measure')
 const main = async () => {
   const rl = readline.createInterface({ input: process.stdin, crlfDelay: Infinity })
 
-  const haystackElements = []
+  const haystackElements = [];
   const needleElements = []
 
   let isHaystack = true
@@ -16,7 +16,7 @@ const main = async () => {
 
     const element = parseInt(line)
     if (isHaystack) {
-      haystackElements.push(element)
+      haystackElements[element] = -1;
     } else {
       needleElements.push(element)
     }
@@ -34,11 +34,11 @@ const main = async () => {
 const nestedIterationIntersectionLiniear = (haystackElements, needleElements) => {
   let intersectionCount = 0
 
-  const combinedArray = haystackElements.concat(needleElements);
-  const sortedArray = combinedArray.sort((a, b) => {
-    intersectionCount++;
-    return a - b
-  });
+  for (const needle of needleElements) {
+    if (haystackElements[needle]) {
+      intersectionCount++
+    }
+  }
 
   return intersectionCount
 }
