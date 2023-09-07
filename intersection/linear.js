@@ -4,9 +4,10 @@ const { measureTimeElapsed } = require('../lib/measure')
 const main = async () => {
   const rl = readline.createInterface({ input: process.stdin, crlfDelay: Infinity })
 
-  // ???
-
+  const haystackSet = new Set()
   let isHaystack = true
+
+  let intersectionCount = 0
   for await (const line of rl) {
     if (line === '-') {
       isHaystack = false
@@ -15,15 +16,23 @@ const main = async () => {
 
     const element = parseInt(line)
 
-    // ???
+    if (isHaystack) {
+      haystackSet.add(element)
+    } else {
+      if (haystackSet.has(element)) {
+        intersectionCount++
+      }
+    }
   }
 
-
-  let intersectionCount = 0
+  intersectionCount = 0
   measureTimeElapsed(() => {
-    // ???
-    throw new Error('Not implemented!')
-  })
+    for (const element of haystackSet) {
+      if (haystackSet.has(element)) {
+        intersectionCount++
+      }
+    }
+  });
 
   console.info(`Intersection count: ${intersectionCount}.`)
 }
